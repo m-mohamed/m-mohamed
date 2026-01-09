@@ -32,7 +32,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           GIFOS_GENERAL_COLOR_SCHEME: yoru
-          GIFOS_GENERAL_FPS: "15"
         run: python scripts/generate_terminal.py
 
       - name: Move output to root
