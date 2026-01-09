@@ -19,16 +19,23 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           template: terminal
           filename: terminal.svg
-          base: header, activity, community, repositories
           config_timezone: America/Los_Angeles
+
+          # Only show whoami header (removes activity, community, repositories sections)
+          base: header
+          base_indepth: yes
 
           # Languages breakdown
           plugin_languages: yes
           plugin_languages_sections: most-used
-          plugin_languages_limit: 8
+          plugin_languages_limit: 6
 
-          # Coding habits
+          # Coding habits (when you code)
           plugin_habits: yes
           plugin_habits_days: 14
           plugin_habits_facts: yes
           plugin_habits_charts: no
+
+          # Lines of code
+          plugin_lines: yes
+          plugin_lines_sections: base
