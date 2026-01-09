@@ -1,8 +1,8 @@
-name: Generate Terminal GIF
+name: Generate Terminal
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # daily at midnight
+    - cron: "0 0 * * *"
   workflow_dispatch:
   push:
     branches: [main]
@@ -14,33 +14,10 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: lowlighter/metrics@latest
         with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
-          pip install github-readme-terminal
-
-      - name: Generate terminal GIF
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
-          GIFOS_GENERAL_COLOR_SCHEME: yoru
-        run: python scripts/generate_terminal.py
-
-      - name: Move output to root
-        run: mv output.gif terminal.gif
-
-      - name: Commit and push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add terminal.gif
-          git commit -m "chore: update terminal GIF" || echo "No changes to commit"
-          git push
+          token: ${{ secrets.GITHUB_TOKEN }}
+          template: terminal
+          filename: terminal.svg
+          base: header, activity, community, repositories
+          config_timezone: America/Los_Angeles

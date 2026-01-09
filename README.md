@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="terminal.gif" alt="Terminal" />
+  <img src="terminal.svg" alt="Terminal" />
 </p>
 
 <picture>
