@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="profile.gif" alt="Terminal Profile" />
+  <img width="400" src="ghost.jpg" />
 </p>
 
 <picture>
