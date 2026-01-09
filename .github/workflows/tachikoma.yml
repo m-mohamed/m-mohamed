@@ -1,4 +1,4 @@
-name: Generate Snake
+name: Generate Tachikoma
 
 on:
   schedule:
@@ -15,13 +15,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate Snake
-        uses: Platane/snk/svg-only@v3
+      - name: Generate Tachikoma
+        uses: m-mohamed/tachikoma/svg-only@main
         with:
           github_user_name: m-mohamed
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
+            dist/tachikoma.svg
+            dist/tachikoma-dark.svg?palette=github-dark
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4
