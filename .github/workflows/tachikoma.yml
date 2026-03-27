@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate Tachikoma
-        uses: m-mohamed/tachikoma/svg-only@d513461f888f56cf133ea917b08873cbcff621b5
+        uses: m-mohamed/tachikoma/svg-only@d5134613b5e714070b25783b0bba71287a91bcb3
         with:
           github_user_name: m-mohamed
           outputs: |
