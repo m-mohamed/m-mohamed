@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate Tachikoma
-        uses: m-mohamed/tachikoma/svg-only@5ababe83e0817da574c37fa218290d9ee20c32ed
+        uses: m-mohamed/tachikoma/svg-only@d513461f888f56cf133ea917b08873cbcff621b5
         with:
           github_user_name: m-mohamed
           outputs: |
@@ -24,9 +24,30 @@ jobs:
             dist/tachikoma-dark.svg?palette=github-dark
 
       - name: Push to output branch
-        uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: output
-          build_dir: dist
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          REMOTE_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          rm -rf /tmp/tachikoma-output
+
+          if git clone --branch output --single-branch "$REMOTE_URL" /tmp/tachikoma-output; then
+            :
+          else
+            git clone "$REMOTE_URL" /tmp/tachikoma-output
+            cd /tmp/tachikoma-output
+            git checkout --orphan output
+            find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+            cd "$GITHUB_WORKSPACE"
+          fi
+
+          cd /tmp/tachikoma-output
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -R "$GITHUB_WORKSPACE/dist/." .
+          touch .nojekyll
+
+          git add -A
+          git commit -m "chore: refresh tachikoma output" || exit 0
+          git push origin output
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
