@@ -2,17 +2,9 @@
 
 I build internal tools, embedded systems, and workflow automation.
 
-Most of my current work is private or client-specific, so this profile stays intentionally small.
+Most of my current work is private. Public code here stays intentionally minimal.
 
-## Public work
-
-- [tachikoma](https://github.com/m-mohamed/tachikoma) - GitHub contribution-grid action with a Gundam renderer powering the animation below
-
-## Focus
-
-- Rust tooling and operator-friendly CLIs
-- ESP32 sensing and control systems
-- Reliable automation that does not drift or break in public
+[`tachikoma`](https://github.com/m-mohamed/tachikoma) powers the contribution animation below.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/m-mohamed/m-mohamed/output/tachikoma-dark.svg" />
