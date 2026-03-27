@@ -1,19 +1,18 @@
-# m9d5m
+# Mohamed Mohamed
 
-I build tools, systems, and experiments across Rust, embedded devices, and developer workflows.
+I build internal tools, embedded systems, and workflow automation.
 
-## Current focus
+Most of my current work is private or client-specific, so this profile stays intentionally small.
 
-- Rust tooling with strong operational UX
-- Embedded and room-scale sensing systems on ESP32
-- Profile and workflow automation that stays reliable in public
+## Public work
 
-## Featured projects
+- [tachikoma](https://github.com/m-mohamed/tachikoma) - GitHub contribution-grid action with a Gundam renderer powering the animation below
 
-- [rehoboam](https://github.com/m-mohamed/rehoboam) - strict tmux project launcher with workspace presets
-- [wraith](https://github.com/m-mohamed/wraith) - live Wi-Fi sensing research stack for ESP32 CSI, a Rust host, and a browser observatory
-- [sprites-rs](https://github.com/m-mohamed/sprites-rs) - Rust SDK for Sprites sandbox environments
-- [esp32-hydroponic-system](https://github.com/m-mohamed/esp32-hydroponic-system) - ESP32-based hydroponic automation and monitoring stack
+## Focus
+
+- Rust tooling and operator-friendly CLIs
+- ESP32 sensing and control systems
+- Reliable automation that does not drift or break in public
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/m-mohamed/m-mohamed/output/tachikoma-dark.svg" />
