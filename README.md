@@ -1,4 +1,3 @@
-# Mohamed Mohamed
 
 I build terminal-native tools, agent/runtime systems, and embedded experiments.
 
